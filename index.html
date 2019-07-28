@@ -1,0 +1,287 @@
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <style>
+      * {
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        display:flex;
+        background:gray;
+        font-family: 'Nunito', sans-serif;
+      }
+
+      .container .sidebar {
+        background-color: black;
+        background-image: linear-gradient(#111, #020617);
+        width:15rem;
+        display:flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+
+      .container .sidebar .section {
+        border-bottom:1px solid rgba(221, 221, 221, .1);
+      }
+
+      .container .sidebar .section.header {
+        display:flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding:10px 20px;
+        font-weight:900;
+        min-height: 100px;
+      }
+
+      .container .sidebar .section.nav {
+        padding:30px 20px;
+        letter-spacing: 1px;
+      }
+
+      .container .sidebar .section.nav ul {
+        display:flex;
+        flex-direction:column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding:0 20px;
+        width:100%;
+        box-sizing: content-box;
+      }
+
+      .container .sidebar .section.nav ul li {
+        list-style-type: none;
+        color:rgba(255, 255, 255, .25);
+        padding:10px 0;
+        font-size:13px;
+        font-weight:900;
+        width: 100%;
+        box-sizing: border-box;
+        cursor: pointer;
+      }
+
+      li i {
+        margin-right:10px;
+        width:30px;
+      }
+
+      .container .sidebar .section.nav ul li.active {
+        color:white;
+        border-right: 2px solid white;
+      }
+
+      .container .sidebar .section.header .profile-image {
+        border-radius:50%;
+        width:50px;
+        height:50px;
+        background-color:gray;
+      }
+
+      .container .sidebar .section.header .profile-name {
+        color:white;
+        font-weight:900;
+        display:flex;
+        flex-direction: column;
+        text-align: left;
+        font-size:13px;
+        margin-right: 25px;
+        white-space:nowrap;
+      }
+
+      .container .sidebar .section.header .profile-name .profile-type {
+        border:1px solid rgba(204, 204, 204, .5);
+        border-radius:3px;
+        font-weight:500;
+        color:rgba(204, 204, 204, .5);
+        font-size:9px;
+        padding:3px;
+        text-align:center;
+        max-width:55px;
+        margin-top:5px;
+      }
+
+      .container .main-content {
+        background: #0f0f28;
+        flex:1;
+        color:white;
+        overflow-x:hidden;
+      }
+
+      .container .main-content .content-header .search-container input.search {
+        background: rgba(204, 204, 204, 0);
+        color:white;
+        -webkit-appearance: none;
+        outline:none;
+        box-shadow:none !important;
+        border-radius:5px;
+        border:none;
+        font-size:15px;
+      }
+
+      .content-header-container {
+        height: 350px;        
+        position:relative;
+        z-index:1;
+        left: 40px;
+        margin-right: 40px;
+      }
+
+      .content-header-container::before {
+        content:"";
+        background-image: linear-gradient(to left, rgba(255, 255, 255, 0) 0, rgba(15, 15, 40, .5) 70%, rgba(15, 15, 40, 1) 100%);
+        position:absolute;
+        z-index:-1;
+        width:100%;
+        height:100%;
+      }
+
+      .content-header-container::after {
+        content: "";
+        position:absolute;
+        background-image: url("https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-s3.si.com%2Fs3fs-public%2Fstyles%2Fmarquee_large_2x%2Fpublic%2F2019%2F07%2F25%2Fnovak-djokovic-withdraws-rogers-cup.jpg%3Fitok%3D-4-oHyXl&w=800&q=85");
+        opacity:0.5;
+        background-size: cover;
+        filter: grayscale(1);
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        top: 0;
+      }
+
+      .content-header {
+        padding:40px 0;
+      }
+
+      .container .main-content .content-header .search-container input.search::placeholder {
+        color:rgba(204, 204, 204, .5);
+      }
+
+      .container .main-content .content-header .search-container {
+        position: relative;
+        margin-bottom:30px;
+        padding-left:30px;
+      }
+
+      .container .main-content .content-header .search-container i {
+        position: absolute;
+        top:50%;
+        left:0;
+        transform: translateY(-50%);
+        color:rgba(204, 204, 204, .5);
+      }
+
+      .songs {
+        display:flex;
+        justify-content: flex-start;
+        /*flex-wrap: wrap;*/
+        position:relative;
+        top:-80px;
+        z-index:1;
+        padding:40px;
+      }
+
+      .songs .song {
+        width:150px;
+        height:150px;
+        border-radius:10px;
+        background:gray;
+        margin:8px;
+        min-width:150px;
+      }
+
+      .songs .song:first-of-type {
+        margin-left:0;
+      }
+
+      h1 {
+        font-weight:300;
+        max-width:400px;
+      }
+
+      .music-player {
+        position:fixed;
+        bottom:0;
+        left:0;
+        right:0;
+        height:75px;
+        background-color: rgba(5,3,20,.9);
+        z-index:3;
+      }
+
+    </style>
+    <body>
+      <div class="container">
+        <div class="sidebar">
+          <div class="section header">
+            <div class="profile-image"></div>
+            <div class="profile-name">
+              Novak Djokovic
+              <div class="profile-type">Premium</div>
+            </div>
+          </div>
+          <div class="section nav">
+            <ul>
+              <li><i class="fas fa-band-aid"></i>Home</li>
+              <li><i class="fas fa-cat"></i>Listen</li>
+              <li class="active"><i class="fas fa-dragon"></i>News</li>
+              <li><i class="fas fa-clock"></i>About</li>
+            </ul>
+          </div>
+          <div class="section nav">
+            <ul>
+              <li>YOUR MUSIC</li>
+              <li><i class="fas fa-headphones"></i>Songs</li>
+              <li><i class="fas fa-cat"></i>Albums</li>
+              <li><i class="fas fa-dragon"></i>Artists</li>
+            </ul>
+          </div>
+          <div class="section nav">
+            <ul>
+              <li>YOUR PLAYLIST</li>
+              <li><i class="fas fa-caret-right"></i>Songs</li>
+              <li><i class="fas fa-caret-right"></i>Albums</li>
+              <li><i class="fas fa-caret-right"></i>Artists</li>
+            </ul>
+          </div>
+        </div>
+        <div class="main-content">
+          <div class="content-header-container">
+            <div class="content-header">
+              <div class="search-container">
+                  <input type="text" placeholder="Search music..." class="search" />
+                  <i class="fas fa-search"></i>
+              </div>
+              <h1>The Chainsmokers and Coldplay - Something just like this</h1>
+            </div>
+          </div>
+          <div class="songs">
+            <div class="song">
+
+            </div>
+            <div class="song">
+              
+            </div>
+            <div class="song">
+              
+            </div>
+            <div class="song">
+              
+            </div>
+            <div class="song">
+              
+            </div>
+            <div class="song">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="music-player">
+
+      </div>
+    </body>
+  </head>
+</html>
