@@ -154,6 +154,7 @@
 
       .content-header {
         padding:40px 0;
+        position: relative;
       }
 
       .search-container .subscribe-button {
@@ -187,13 +188,35 @@
       .container .main-content .content-header .header-title {
         display:flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: baseline;
         padding-right:30px;
+      }
+
+      .header-title .title-section p {
+        font-size:12px;
+        font-style:italic;
+        padding: 10px;
+        margin-top: 10px;
+      }
+
+      .sub-title {
+        max-width:400px;
+        border-left:1px solid white;
       }
 
       .header-title i {
         font-size:8px;
         margin:5px 0;
+      }
+
+      .go-left-right {
+        position: absolute;
+        right:30px;
+        bottom:30px;
+      }
+
+      .go-left-right i {
+        margin:7px;
       }
 
       .header-title .dots {
@@ -325,13 +348,22 @@
                   <button class="subscribe-button">Subscribe</button>
               </div>
               <div class="header-title">
-                <h1>The Chainsmokers and Coldplay - Something just like this</h1>
+                <div class="title-section">
+                  <h1>The Chainsmokers and Coldplay - Something just like this</h1>
+                  <div class="sub-title">
+                    <p>An awesome new song by your favorite band. Listening to it will make you cry. Well, probably not. But still, the song is flippin' sweet bruh.</p>
+                  </div>
+                </div>
                 <div class="dots">
                   <i class="far fa-circle"></i>
                   <i class="fas fa-circle"></i>
                   <i class="far fa-circle"></i>
                   <i class="far fa-circle"></i>
                 </div>
+              </div>
+              <div class="go-left-right">
+                <i class="fas fa-chevron-left"></i>
+                <i class="fas fa-chevron-right"></i>
               </div>
             </div>
           </div>
@@ -389,7 +421,7 @@
         </div>
       </div>
       <div class="music-player">
-
+        
       </div>
     </body>
   </head>
