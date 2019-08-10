@@ -1,0 +1,156 @@
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">  
+    <link href="https://fonts.googleapis.com/css?family=Lato|Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Red+Hat+Display&display=swap" rel="stylesheet">    <style>
+      * {
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: 'Nunito', sans-serif;
+      }
+
+      body {
+        position:relative;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        background-color:#ccc;
+      }
+
+      .header {
+        position:absolute;
+        height:120px;
+        top:0;
+        left:0;
+        right:0;
+        background-image: linear-gradient(to bottom, rgba(0,0,0,.5), rgba(0,0,0,.4));
+        display:flex;
+        flex-direction: column;
+        z-index:2;
+      }
+
+      .header .mini-header {
+        flex:1;
+        border-bottom:1px solid rgba(255, 255, 255, .25);
+        padding:0 40px;
+        color:#fff;
+        display:flex;
+        align-items:center;
+      }
+
+      .mini-header .link {
+        margin:0 15px;
+        font-size:12px;
+        font-weight:700;
+      }
+
+      .mini-header .link:first-child {
+        margin-left:2px;
+      }
+
+      .header .main-header {
+        flex:2;
+        display:flex;
+        align-items:center;
+        padding:0 40px;
+        font-weight:100;
+        font-size:40px;
+        color:white;
+        font-family: 'Raleway', sans-serif;
+        letter-spacing: 0px;
+      }
+
+      .main-header strong {
+        font-family: 'Raleway', sans-serif;
+        font-weight:900;
+      }
+
+      .main-header i {
+        color: #3474eb;
+        margin-right:20px;
+        font-size:30px;
+      }
+
+      .banner {
+        position:absolute;
+        z-index:1;
+        height:500px;
+        left:0;
+        right:0;
+        top:0;
+        background-image: url("https://forum44.djicdn.com/data/attachment/forum/201806/15/070741gery5kkdznfe1jnd.jpg");
+        width:100%;
+        background-size: cover;
+        object-fit: cover;
+      }
+
+      .banner .title {
+        position:absolute;
+        left:40px;
+        bottom:110px;
+      }
+
+      .banner .title h1.main {
+        position:relative;
+        font-size:55px;
+        font-weight:900;
+        color:white;
+        font-family: 'Lato', sans-serif;
+        text-shadow: 1px 1px #111;
+      }
+
+      .banner .title .sub-title {
+        position:relative;
+        font-size:15px;
+        font-weight:300;
+        color:white;
+        font-family: 'Lato', sans-serif;
+        text-shadow: 1px 1px #111;
+        top:10px;
+      }
+
+      .cards {
+        position:absolute;
+        height:100px;
+        background-image: linear-gradient(to bottom, rgba(0,0,0,.5), rgba(0,0,0,.4));
+        left:40px;
+        right:40px;
+        top: 450px;
+        z-index:3;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="header">
+      <div class="mini-header">
+        <div class="link">
+          <i class="fas fa-circle"></i>
+          Contact
+        </div>
+        <div class="link">
+          <i class="fas fa-circle"></i>
+          Join
+        </div>
+        <div class="link">
+          <i class="fas fa-circle"></i>
+          Sign In
+        </div>
+      </div>
+      <div class="main-header">
+        <i class="fas fa-music"></i> DrewJex
+      </div>
+    </section>
+    <section class="banner">
+      <div class="title">
+        <h1 class="main">Inspiring Piano Music</h1>
+        <span class="sub-title">Discover your next adventure here, where music takes you to places you've never seen before.</span>
+      </div>
+    </section>
+    <section class="cards">
+
+    </section>
+  </body>
+</html>
